@@ -1,21 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <Outlet />
+        {children || <Outlet />}
       </main>
-      <footer className="bg-gray-100 py-8 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
-          &copy; 2024 CampusOne. All rights reserved.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
 
 export default MainLayout;
-
