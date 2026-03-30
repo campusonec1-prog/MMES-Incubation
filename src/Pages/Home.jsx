@@ -1,7 +1,37 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import img1 from '../Images/1.png';
 import img2 from '../Images/2.png';
 import img3 from '../Images/3.png';
+import {
+  Rocket,
+  GraduationCap,
+  Handshake,
+  Building,
+  Briefcase,
+  TrendingUp,
+  Coins,
+  Receipt,
+  Laptop,
+  Plug,
+  Microscope,
+  FlaskConical,
+  Brain,
+  Scroll,
+  User,
+  Users,
+  Mail,
+  Phone,
+  Search,
+  FileText,
+  Radio,
+  Scale,
+  Factory,
+  Lightbulb,
+  Landmark,
+  ShieldAlert
+} from 'lucide-react';
+
 
 /* ─── DATA ─────────────────────────────────────────────── */
 const slides = [
@@ -35,43 +65,31 @@ const slides = [
 ];
 
 const ciicImpact = [
-  { label: 'Startups Incubated', value: '136', icon: '🚀' },
-  { label: 'Graduated Startups', value: '75', icon: '🎓' },
-  { label: 'Partnerships', value: '127', icon: '🤝' },
-  { label: 'Built-up Area', value: '1L Sq Ft', icon: '🏢' },
+  { label: 'Startups Incubated', value: '136', icon: <Rocket size={32} /> },
+  { label: 'Graduated Startups', value: '75', icon: <GraduationCap size={32} /> },
+  { label: 'Partnerships', value: '127', icon: <Handshake size={32} /> },
+  { label: 'Built-up Area', value: '1L Sq Ft', icon: <Building size={32} /> },
 ];
 
 const startupImpact = [
-  { label: 'Jobs Created', value: '2435', icon: '💼' },
-  { label: 'Startups Valuation', value: '₹3161 Cr', icon: '📈' },
-  { label: 'Sales Turnover', value: '₹828 Cr', icon: '💰' },
-  { label: 'Fund Raised', value: '₹478 Cr', icon: '💸' },
+  { label: 'Jobs Created', value: '2435', icon: <Briefcase size={32} /> },
+  { label: 'Startups Valuation', value: '₹3161 Cr', icon: <TrendingUp size={32} /> },
+  { label: 'Sales Turnover', value: '₹828 Cr', icon: <Coins size={32} /> },
+  { label: 'Fund Raised', value: '₹478 Cr', icon: <Receipt size={32} /> },
 ];
 
 const thrustAreas = [
   {
-    title: 'LIFE SCIENCES',
-    count: 64,
-    gradient: 'linear-gradient(135deg, #db2777, #ef4444)',
-    items: 'Bio-Pharma | Bio-Energy | Bio-Services | Bio-Industry | Med-Tech | Agri-Tech',
+    title: 'Artificial Intelligence & IoT Applications',
+    items: 'AI | ML | AR/VR | Cloud Computing | Automation | Simulation Integration | BIG Data | Cyber Security | Robotics | IoT Applications',
   },
   {
-    title: 'INDUSTRY 4.0',
-    count: 50,
-    gradient: 'linear-gradient(135deg, #2563eb, #1e40af)',
-    items: 'AI | ML | AR/VR | Cloud Computing | Automation | Simulation Integration | BIG Data | Cyber Security | Robotics',
+    title: 'Sustainable Infrastructure & Environmental Technologies',
+    items: 'Sustainable Infrastructure | Environmental Technologies | Green Building | Waste Management | Renewable Energy | Water Conservation',
   },
   {
-    title: 'SMART & CLEAN MOBILITY',
-    count: 17,
-    gradient: 'linear-gradient(135deg, #9333ea, #6b21a8)',
-    items: 'Drone Technology | Smart & Non Fossil Fuel Vehicles | Electric Vehicles | EV Battery Management | Autonomous Navigation | MaaS',
-  },
-  {
-    title: 'AEROSPACE & DEFENCE TECHNOLOGIES',
-    count: 8,
-    gradient: 'linear-gradient(135deg, #ea580c, #c2410c)',
-    items: 'Aerospace Tech | Naval Tech | Communication Systems & Sensors | Energy Tech',
+    title: 'Life Sciences & Bio-Innovation',
+    items: 'Bio-Pharma | Bio-Energy | Bio-Services | Bio-Industry | Med-Tech | Agri-Tech | Life Sciences',
   },
 ];
 
@@ -230,7 +248,12 @@ export default function Home() {
       <HeroSlider />
 
       {/* FACILITIES AVAILABLE */}
-      <section className="py-20 bg-gray-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">Facilities Available</h2>
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
@@ -238,23 +261,28 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { icon: '🏢', text: 'Office space at nominal rent' },
-              { icon: '💻', text: 'High-performance computing systems with GPU support' },
-              { icon: '🔌', text: 'IoT development kits and embedded systems platforms' },
-              { icon: '🔬', text: 'Access to Aquatic Animal Health Laboratory (NABL-accredited laboratory) for biological and environmental testing' },
-              { icon: '🧪', text: 'Laboratory access based on project requirements' },
+              { icon: <Building size={32} />, text: 'Office space at nominal rent' },
+              { icon: <Laptop size={32} />, text: 'High-performance computing systems with GPU support' },
+              { icon: <Plug size={32} />, text: 'IoT development kits and embedded systems platforms' },
+              { icon: <Microscope size={32} />, text: 'Access to Aquatic Animal Health Laboratory (NABL-accredited laboratory) for biological and environmental testing' },
+              { icon: <FlaskConical size={32} />, text: 'Laboratory access based on project requirements' },
             ].map(f => (
-              <div key={f.text} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+              <motion.div key={f.text} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <span className="text-2xl shrink-0">{f.icon}</span>
                 <p className="text-gray-700 font-medium text-sm leading-relaxed">{f.text}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* SUPPORT OFFERED */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">Support Offered</h2>
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
@@ -263,7 +291,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                icon: '💰', title: 'Grant & Funding Support',
+                icon: <Coins size={32} />, title: 'Grant & Funding Support',
                 style: { background: 'linear-gradient(135deg, #1e40af, #2563eb)' },
                 points: [
                   'Assistance in applying for funding from DST, MSME, Startup India, AICTE, and other agencies',
@@ -271,7 +299,7 @@ export default function Home() {
                 ],
               },
               {
-                icon: '🧠', title: 'Mentoring Support',
+                icon: <Brain size={32} />, title: 'Mentoring Support',
                 style: { background: 'linear-gradient(135deg, #92400e, #b45309)' },
                 points: [
                   'Technical mentoring from experienced faculty and domain experts',
@@ -279,7 +307,7 @@ export default function Home() {
                 ],
               },
               {
-                icon: '📜', title: 'IPR & Patent Support',
+                icon: <Scroll size={32} />, title: 'IPR & Patent Support',
                 style: { background: 'linear-gradient(135deg, #1e3a8a, #1d4ed8)' },
                 points: [
                   'Support for patents, copyrights, and trademarks',
@@ -287,7 +315,7 @@ export default function Home() {
                 ],
               },
               {
-                icon: '🤝', title: 'Industry Collaboration',
+                icon: <Handshake size={32} />, title: 'Industry Collaboration',
                 style: { background: 'linear-gradient(135deg, #7f1d1d, #b91c1c)' },
                 points: [
                   'Linkages with regional industries and real-time problem statements',
@@ -295,7 +323,7 @@ export default function Home() {
                 ],
               },
             ].map(item => (
-              <div key={item.title} className="rounded-2xl p-7 text-white shadow-lg hover:scale-[1.02] transition-transform" style={item.style}>
+              <motion.div key={item.title} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="rounded-2xl p-7 text-white shadow-lg hover:scale-[1.02] transition-transform" style={item.style}>
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl">{item.icon}</span>
                   <h4 className="font-black text-lg">{item.title}</h4>
@@ -307,14 +335,19 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* SUSTAINABLE INFRASTRUCTURE FACILITIES */}
-      <section className="py-20 bg-gray-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-14">
             Sustainable Infrastructure Facilities
@@ -335,10 +368,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* WHO CAN APPLY + APPLICATION DETAILS */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Who Can Apply */}
@@ -346,9 +384,9 @@ export default function Home() {
               <h3 className="text-2xl font-black text-gray-900 mb-6">Who Can Apply?</h3>
               <div className="space-y-4">
                 {[
-                  { icon: '🚀', label: 'Early-stage startups' },
-                  { icon: '👨‍🎓', label: 'Student and faculty innovators' },
-                  { icon: '🧑‍💼', label: 'Entrepreneurs working on technology-driven solutions' },
+                  { icon: <Rocket size={32} />, label: 'Early-stage startups' },
+                  { icon: <GraduationCap size={32} />, label: 'Student and faculty innovators' },
+                  { icon: <Briefcase size={32} />, label: 'Entrepreneurs working on technology-driven solutions' },
                 ].map(item => (
                   <div key={item.label} className="flex items-center gap-4 bg-blue-50 rounded-xl p-4 border border-blue-100">
                     <span className="text-2xl">{item.icon}</span>
@@ -374,63 +412,89 @@ export default function Home() {
               <div className="space-y-3">
                 <p className="font-bold text-gray-900 mb-2">Email:</p>
                 <a href="mailto:muzaffar.it@cahcet.edu.in" className="flex items-center gap-2 text-blue-700 hover:underline text-sm">
-                  📧 muzaffar.it@cahcet.edu.in
+                  <Mail size={16} className="shrink-0" /> muzaffar.it@cahcet.edu.in
                 </a>
                 <a href="mailto:hashimba.ece@cahcet.edu.in" className="flex items-center gap-2 text-blue-700 hover:underline text-sm">
-                  📧 hashimba.ece@cahcet.edu.in
+                  <Mail size={16} className="shrink-0" /> hashimba.ece@cahcet.edu.in
                 </a>
                 <p className="flex items-center gap-2 text-gray-700 text-sm font-medium">
-                  📞 9789297572 | 9943295889
+                  <Phone size={16} className="shrink-0" /> 9789297572 | 9943295889
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* THRUST AREAS */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">
-            Thrust Areas
-          </h2>
-          <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
-            We focus on high-impact innovation sectors that are shaping the future.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            {thrustAreas.map(area => (
-              <div
-                key={area.title}
-                className="relative rounded-2xl p-8 text-white shadow-xl hover:scale-[1.02] transition-transform"
-                style={{ background: area.gradient }}
-              >
-                <div className="flex items-start gap-4">
-                  <div>
-                    <h3 className="text-lg font-black uppercase tracking-wide mb-3">{area.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{area.items}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-gray-50 border-t border-gray-100"
+      >
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="relative mb-16 flex justify-center">
+            {/* Orange Ribbon Header matching reference image */}
+            <div className="relative bg-orange-500 text-white px-12 py-3 shadow-lg z-10">
+              <h2 className="text-2xl md:text-3xl font-black text-center uppercase tracking-wider">
+                Thrust Areas
+              </h2>
+              {/* Ribbon slanted edges */}
+              <div className="absolute top-0 -left-6 h-full w-6 bg-orange-600 [clip-path:polygon(100%_0,0_50%,100%_100%)]"></div>
+              <div className="absolute top-0 -right-6 h-full w-6 bg-orange-600 [clip-path:polygon(0_0,100%_50%,0_100%)]"></div>
+            </div>
+            {/* Background design line */}
+            <div className="absolute top-1/2 left-0 w-full h-px bg-gray-300 -z-0"></div>
           </div>
 
-          {/* Center logo */}
-          <div className="flex justify-center mt-12">
-            <div className="w-48 h-48 rounded-full bg-white border-4 border-gray-200 shadow-2xl flex flex-col items-center justify-center">
-              <div className="text-center">
-                <div className="text-blue-900 font-black text-xl leading-tight">MMES</div>
-                <div className="text-blue-700 font-bold text-sm leading-tight">Incubation &</div>
-                <div className="text-blue-700 font-bold text-sm leading-tight">Innovation</div>
-                <div className="text-blue-700 font-bold text-sm leading-tight">Council</div>
-                <div className="text-xs text-gray-400 mt-1">(MIIC)</div>
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+            <div className="space-y-8">
+              {thrustAreas.map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="mt-2.5 shrink-0">
+                    {/* Red Triangle Bullet matching reference image */}
+                    <div className="w-4 h-4 bg-red-700 [clip-path:polygon(0%_0%,100%_50%,0%_100%)] transition-transform group-hover:translate-x-1"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-blue-900 leading-tight">
+                      {area.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm mt-1 leading-relaxed">
+                      {area.items}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Subtle center logo integration */}
+            <div className="flex justify-center mt-12 border-t border-gray-100 pt-10">
+              <div className="w-32 h-32 rounded-full bg-blue-50 border-2 border-blue-100 flex flex-col items-center justify-center text-center p-2 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <div className="text-blue-900 font-black text-xs leading-tight">MMES</div>
+                <div className="text-blue-700 font-bold text-[10px] leading-tight">Incubation & Innovation</div>
+                <div className="text-[8px] text-gray-400 mt-0.5">(MIIC)</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* IPR SERVICES */}
-      <section className="py-20 bg-blue-900 text-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-blue-900 text-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black mb-4">IPR & Patent Support</h2>
@@ -441,23 +505,23 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {[
               {
-                num: '01', icon: '🔍', title: 'Prior Art Search',
+                num: '01', icon: <Search size={32} />, title: 'Prior Art Search',
                 points: ['Comprehensive search of existing patents and literature', 'Helps assess novelty before filing'],
               },
               {
-                num: '02', icon: '📝', title: 'Drafting & Filing Patent Applications',
+                num: '02', icon: <FileText size={32} />, title: 'Drafting & Filing Patent Applications',
                 points: ['Support for patents, copyrights, and trademarks', 'Assistance in documentation and filing'],
               },
               {
-                num: '03', icon: '📡', title: 'Awareness Sessions',
+                num: '03', icon: <Radio size={32} />, title: 'Awareness Sessions',
                 points: ['Workshops on IP protection and commercialisation', 'Guidance for student and faculty innovators'],
               },
               {
-                num: '04', icon: '⚖️', title: 'Freedom to Operate Analysis',
+                num: '04', icon: <Scale size={32} />, title: 'Freedom to Operate Analysis',
                 points: ['Evaluate if your product infringes existing patents', 'Risk assessment before market launch'],
               },
             ].map(item => (
-              <div key={item.num} className="bg-blue-800/60 rounded-2xl p-6 hover:bg-blue-800 transition-colors">
+              <motion.div key={item.num} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="bg-blue-800/60 rounded-2xl p-6 hover:bg-blue-800 transition-colors">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">{item.icon}</span>
                   <div>
@@ -472,20 +536,25 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="bg-blue-800/40 rounded-2xl p-6 text-center border border-blue-700">
             <p className="text-blue-200 text-sm">
-              📧 Apply for IPR support: <a href="mailto:muzaffar.it@cahcet.edu.in" className="text-white font-semibold hover:underline">muzaffar.it@cahcet.edu.in</a>
+              <Mail size={16} className="shrink-0 mr-2 inline" /> Apply for IPR support: <a href="mailto:muzaffar.it@cahcet.edu.in" className="text-white font-semibold hover:underline">muzaffar.it@cahcet.edu.in</a>
               {' '} | <a href="mailto:hashimba.ece@cahcet.edu.in" className="text-white font-semibold hover:underline">hashimba.ece@cahcet.edu.in</a>
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* INSTITUTIONAL SUPPORT */}
-      <section className="py-20 bg-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">
             Institutional Support & Alignments
@@ -495,26 +564,26 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mb-16">
             {[
-              { name: 'DST', full: 'Dept. of Science & Technology', emoji: '🔬' },
-              { name: 'MSME', full: 'Ministry of MSME', emoji: '🏭' },
-              { name: 'AICTE', full: 'All India Council for Technical Education', emoji: '🎓' },
-              { name: 'Startup India', full: 'Govt. of India Initiative', emoji: '🚀' },
-              { name: 'ATAL Innovation Mission', full: 'NITI Aayog', emoji: '💡' },
-              { name: 'MeitY', full: 'Ministry of Electronics & IT', emoji: '💻' },
-              { name: 'CAHCET', full: 'C. Abdul Hakeem College of Engg.', emoji: '🏛️' },
-              { name: 'MMES Trust', full: 'Mohamed Masood Educational Society', emoji: '🤝' },
+              { name: 'DST', full: 'Dept. of Science & Technology', emoji: <Microscope size={32} /> },
+              { name: 'MSME', full: 'Ministry of MSME', emoji: <Factory size={32} /> },
+              { name: 'AICTE', full: 'All India Council for Technical Education', emoji: <GraduationCap size={32} /> },
+              { name: 'Startup India', full: 'Govt. of India Initiative', emoji: <Rocket size={32} /> },
+              { name: 'ATAL Innovation Mission', full: 'NITI Aayog', emoji: <Lightbulb size={32} /> },
+              { name: 'MeitY', full: 'Ministry of Electronics & IT', emoji: <Laptop size={32} /> },
+              { name: 'CAHCET', full: 'C. Abdul Hakeem College of Engg.', emoji: <Landmark size={32} /> },
+              { name: 'MMES Trust', full: 'Mohamed Masood Educational Society', emoji: <Handshake size={32} /> },
             ].map(item => (
-              <div key={item.name} className="flex flex-col items-center text-center p-5 rounded-2xl border border-gray-100 hover:border-blue-300 hover:shadow-md transition-all bg-gray-50">
+              <motion.div key={item.name} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="flex flex-col items-center text-center p-5 rounded-2xl border border-gray-100 hover:border-blue-300 hover:shadow-md transition-all bg-gray-50">
                 <span className="text-3xl mb-2">{item.emoji}</span>
                 <span className="font-black text-blue-900 text-sm">{item.name}</span>
                 <span className="text-gray-400 text-xs mt-1 leading-tight">{item.full}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Become a Partner CTA */}
           <div className="rounded-3xl p-10 text-center text-white" style={{ background: 'linear-gradient(135deg, #1e3a8a, #1d4ed8)' }}>
-            <div className="text-4xl mb-4">🤝</div>
+            <div className="text-4xl mb-4 flex justify-center"><Handshake size={48} /></div>
             <h3 className="text-2xl md:text-3xl font-black mb-3">Become a Partner</h3>
             <p className="text-blue-200 max-w-lg mx-auto mb-8 text-sm leading-relaxed">
               MIIC is actively looking for investor partners, industry mentors, and corporate collaborators to co-build the startup ecosystem at CAHCET. Be part of groundbreaking innovation from day one.
@@ -524,21 +593,26 @@ export default function Home() {
                 href="mailto:muzaffar.it@cahcet.edu.in"
                 className="inline-flex items-center gap-2 bg-white text-blue-900 font-black px-7 py-3 rounded-full text-sm hover:bg-blue-50 transition-colors shadow-lg"
               >
-                📧 Express Your Interest
+                <Mail size={20} className="mr-2 shrink-0" /> Express Your Interest
               </a>
               <a
                 href="tel:9789297572"
                 className="inline-flex items-center gap-2 border-2 border-white/40 text-white font-bold px-7 py-3 rounded-full text-sm hover:bg-white/10 transition-colors"
               >
-                📞 Call Us: 9789297572
+                <Phone size={20} className="mr-2 shrink-0" /> Call Us: 9789297572
               </a>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-black mb-6 uppercase">
             Turn Your Ideas Into Impact
@@ -553,7 +627,7 @@ export default function Home() {
             Apply for Incubation →
           </a>
         </div>
-      </section>
+      </motion.section>
 
     </div>
   );

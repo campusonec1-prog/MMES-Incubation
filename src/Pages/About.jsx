@@ -1,3 +1,4 @@
+import { Flame, Handshake, Target, Leaf, Landmark, MapPin, GraduationCap, Rocket, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const milestones = [
@@ -13,10 +14,10 @@ const team = [
 ];
 
 const values = [
-  { icon: '🔥', title: 'Innovation First', desc: 'We believe every problem has an innovative solution. We exist to help you find and build it.' },
-  { icon: '🤝', title: 'Collaborative Growth', desc: 'We connect startups with mentors, industry, and institutions for shared success.' },
-  { icon: '🎯', title: 'Impact Driven', desc: 'We measure success by the social, economic, and technological impact our startups create.' },
-  { icon: '🌱', title: 'Inclusive Ecosystem', desc: 'Open to students, faculty, and entrepreneurs — from any background, any stage.' },
+  { icon: <Flame size={32} />, title: 'Innovation First', desc: 'We believe every problem has an innovative solution. We exist to help you find and build it.' },
+  { icon: <Handshake size={32} />, title: 'Collaborative Growth', desc: 'We connect startups with mentors, industry, and institutions for shared success.' },
+  { icon: <Target size={32} />, title: 'Impact Driven', desc: 'We measure success by the social, economic, and technological impact our startups create.' },
+  { icon: <Leaf size={32} />, title: 'Inclusive Ecosystem', desc: 'Open to students, faculty, and entrepreneurs — from any background, any stage.' },
 ];
 
 export default function About() {
@@ -61,10 +62,10 @@ export default function About() {
           </div>
           <div className="grid grid-cols-2 gap-5">
             {[
-              { icon: '🏛️', label: 'Established', value: '' },
-              { icon: '📍', label: 'Location', value: 'Melvisharam, Tamil Nadu' },
-              { icon: '🎓', label: 'Host Institution', value: 'CAHCET' },
-              { icon: '🚀', label: 'Stage', value: 'Launching' },
+              { icon: <Landmark size={24} />, label: 'Established', value: '' },
+              { icon: <MapPin size={24} />, label: 'Location', value: 'Melvisharam, Tamil Nadu' },
+              { icon: <GraduationCap size={24} />, label: 'Host Institution', value: 'CAHCET' },
+              { icon: <Rocket size={24} />, label: 'Stage', value: 'Launching' },
             ].map(item => (
               <div key={item.label} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-2">{item.icon}</div>
@@ -81,14 +82,14 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="rounded-3xl p-10 text-white" style={{ background: 'linear-gradient(135deg, #1e3a8a, #1d4ed8)' }}>
-              <div className="text-4xl mb-5">🎯</div>
+              <div className="text-4xl mb-5"><Target size={32} size={24} /></div>
               <h3 className="text-2xl font-black mb-4">Our Mission</h3>
               <p className="text-blue-100 leading-relaxed">
                 To create an inclusive, resource-rich innovation ecosystem that empowers students, faculty, and entrepreneurs to ideate, incubate, and launch technology-based ventures — driven by societal need and guided by industry mentorship.
               </p>
             </div>
             <div className="rounded-3xl p-10 text-white" style={{ background: 'linear-gradient(135deg, #7f1d1d, #b91c1c)' }}>
-              <div className="text-4xl mb-5">🌟</div>
+              <div className="text-4xl mb-5"><Star size={32} size={24} /></div>
               <h3 className="text-2xl font-black mb-4">Our Vision</h3>
               <p className="text-red-100 leading-relaxed">
                 To become the foremost startup incubation hub in Tamil Nadu — nurturing industry-ready innovators who can build scalable, impactful ventures that contribute to national and global progress.

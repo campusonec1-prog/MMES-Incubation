@@ -1,17 +1,18 @@
 import React from 'react';
+import { Bot, Building2, Dna, Building, Laptop, Microscope, Plug, Rocket, GraduationCap, Handshake, Coins, Brain, Mail, Phone } from 'lucide-react';
 
 const Incubation = () => {
   const thrustAreas = [
-    { title: 'Artificial Intelligence & IoT', icon: '🤖' },
-    { title: 'Sustainable Infrastructure & Environmental Technologies', icon: '🏗️' },
-    { title: 'Life Sciences & Bio-Innovation', icon: '🧬' },
+    { title: 'Artificial Intelligence & IoT', icon: <Bot size={24} /> },
+    { title: 'Sustainable Infrastructure & Environmental Technologies', icon: <Building2 size={24} /> },
+    { title: 'Life Sciences & Bio-Innovation', icon: <Dna size={24} /> },
   ];
 
   const facilities = [
-    { name: 'Office space at nominal rent', icon: '🏢' },
-    { name: 'High-end systems with GPU support', icon: '💻' },
-    { name: 'AAHL NABL Accredited Lab', icon: '🔬' },
-    { name: 'IoT Kits & Embedded Platforms', icon: '🔌' },
+    { name: 'Office space at nominal rent', icon: <Building size={24} /> },
+    { name: 'High-end systems with GPU support', icon: <Laptop size={24} /> },
+    { name: 'AAHL NABL Accredited Lab', icon: <Microscope size={24} /> },
+    { name: 'IoT Kits & Embedded Platforms', icon: <Plug size={24} /> },
   ];
 
   const sustainableFacilities = [
@@ -31,10 +32,10 @@ const Incubation = () => {
   ];
 
   const stats = [
-    { label: 'Startups Incubated', value: '136', icon: '🚀' },
-    { label: 'Graduated Startups', value: '75', icon: '🎓' },
-    { label: 'Partnerships', value: '127', icon: '🤝' },
-    { label: 'Built-up Area', value: '1L Sq Ft', icon: '🏢' },
+    { label: 'Startups Incubated', value: '136', icon: <Rocket size={24} /> },
+    { label: 'Graduated Startups', value: '75', icon: <GraduationCap size={24} /> },
+    { label: 'Partnerships', value: '127', icon: <Handshake size={24} /> },
+    { label: 'Built-up Area', value: '1L Sq Ft', icon: <Building size={24} /> },
   ];
 
   return (
@@ -70,10 +71,10 @@ const Incubation = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: 'Dedicated Workspace', desc: 'Plug-and-play office space with high-speed internet & meeting rooms', icon: '🏢' },
-              { label: 'Funding Access', desc: 'Guidance to secure grants from DST, MSME, and Seed Funds', icon: '💰' },
-              { label: 'Expert Mentoring', desc: '1-on-1 guidance from industry veterans & faculty experts', icon: '🧠' },
-              { label: 'Lab Infrastructure', desc: 'GPU workstations, IoT kits, & NABL testing labs onsite', icon: '🔬' },
+              { label: 'Dedicated Workspace', desc: 'Plug-and-play office space with high-speed internet & meeting rooms', icon: <Building size={24} /> },
+              { label: 'Funding Access', desc: 'Guidance to secure grants from DST, MSME, and Seed Funds', icon: <Coins size={24} /> },
+              { label: 'Expert Mentoring', desc: '1-on-1 guidance from industry veterans & faculty experts', icon: <Brain size={24} /> },
+              { label: 'Lab Infrastructure', desc: 'GPU workstations, IoT kits, & NABL testing labs onsite', icon: <Microscope size={24} /> },
             ].map((highlight, idx) => (
               <div key={idx} className="text-center p-8 rounded-2xl bg-blue-50/50 border border-blue-100 shadow-sm hover:shadow-md hover:bg-blue-50 transition-all flex flex-col items-center">
                 <div className="text-4xl mb-4 bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm">{highlight.icon}</div>
@@ -186,16 +187,16 @@ const Incubation = () => {
             <div className="grid gap-4 w-full md:w-auto">
               <div className="flex flex-col md:flex-row gap-4">
                 <a href="mailto:muzaffar.it@cahcet.edu.in" className="flex items-center bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-900 transition-colors">
-                  <span className="mr-3">📧</span>
+                  <span className="mr-3"><Mail size={16} size={24} /></span>
                   <span className="text-sm font-semibold">muzaffar.it@cahcet.edu.in</span>
                 </a>
                 <a href="mailto:hashimba.ece@cahcet.edu.in" className="flex items-center bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-900 transition-colors">
-                  <span className="mr-3">📧</span>
+                  <span className="mr-3"><Mail size={16} size={24} /></span>
                   <span className="text-sm font-semibold">hashimba.ece@cahcet.edu.in</span>
                 </a>
               </div>
               <div className="flex items-center justify-center md:justify-start bg-blue-900 text-white px-6 py-3 rounded-xl shadow-lg">
-                <span className="mr-3">📞</span>
+                <span className="mr-3"><Phone size={16} size={24} /></span>
                 <span className="text-md font-bold">9789297572 | 9943295889</span>
               </div>
             </div>
