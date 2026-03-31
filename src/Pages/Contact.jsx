@@ -25,6 +25,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">Email Support</h4>
                   <p className="text-gray-500 mb-2">Technical & Administrative Inquiries:</p>
+                  <a href="mailto:miic@cahcet.edu.in" className="text-blue-700 font-semibold hover:underline block mb-1">miic@cahcet.edu.in</a>
                   <a href="mailto:muzaffar.it@cahcet.edu.in" className="text-blue-700 font-semibold hover:underline block mb-1">muzaffar.it@cahcet.edu.in</a>
                   <a href="mailto:hashimba.ece@cahcet.edu.in" className="text-blue-700 font-semibold hover:underline block">hashimba.ece@cahcet.edu.in</a>
                 </div>
