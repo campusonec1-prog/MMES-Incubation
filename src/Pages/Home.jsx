@@ -42,7 +42,7 @@ const slides = [
     image: img1,
     gradient: 'linear-gradient(to right, #1e3a8a, #1d4ed8)',
     label: 'OFFICE HUB',
-    sublabel: 'IDEATE | INCUBATE | ACCELERATE',
+    sublabel: '| SEED | RISE | SCALE |',
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ const slides = [
     image: img2,
     gradient: 'linear-gradient(to right, #991b1b, #dc2626)',
     label: 'INNOVATION ECOSYSTEM',
-    sublabel: 'IDEATE | INCUBATE | ACCELERATE',
+    sublabel: '| SEED | RISE | SCALE |',
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ const slides = [
     image: img3,
     gradient: 'linear-gradient(to right, #312e81, #4338ca)',
     label: 'THRUST AREAS',
-    sublabel: 'IDEATE | INCUBATE | ACCELERATE',
+    sublabel: '| SEED | RISE | SCALE |',
   },
 ];
 
@@ -411,6 +411,9 @@ export default function Home() {
               </div>
               <div className="space-y-3">
                 <p className="font-bold text-gray-900 mb-2">Email:</p>
+                <a href="mailto:miic@cahcet.edu.in" className="flex items-center gap-2 text-blue-700 hover:underline text-sm">
+                  <Mail size={16} className="shrink-0" /> miic@cahcet.edu.in
+                </a>
                 <a href="mailto:muzaffar.it@cahcet.edu.in" className="flex items-center gap-2 text-blue-700 hover:underline text-sm">
                   <Mail size={16} className="shrink-0" /> muzaffar.it@cahcet.edu.in
                 </a>
