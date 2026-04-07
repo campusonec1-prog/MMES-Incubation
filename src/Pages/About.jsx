@@ -9,7 +9,7 @@ const milestones = [
 ];
 
 const team = [
-  { name: 'Dr. P. Mohammed Muzaffar Ali', role: 'MIIC Coordinator', dept: 'Dept. of Information Technology', email: 'muzaffar.it@cahcet.edu.in' },
+  { name: 'Dr Mohammed Muzaffar Hussain', role: 'MIIC Coordinator', dept: 'Dept. of Information Technology', email: 'muzaffar.it@cahcet.edu.in' },
   { name: 'Mr. Hashim B A', role: 'MIIC Co-Coordinator', dept: 'Dept. of Electronics & Communication Engineering', email: 'hashimba.ece@cahcet.edu.in' },
 ];
 
