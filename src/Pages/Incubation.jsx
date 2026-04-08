@@ -186,13 +186,9 @@ const Incubation = () => {
             </div>
             <div className="grid gap-4 w-full md:w-auto">
               <div className="flex flex-col md:flex-row gap-4">
-                <a href="mailto:muzaffar.it@cahcet.edu.in" className="flex items-center bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-900 transition-colors">
+                <a href="mailto:miic@cahcet.edu.in" className="flex items-center bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-900 transition-colors">
                   <span className="mr-3"><Mail size={16} size={24} /></span>
-                  <span className="text-sm font-semibold">muzaffar.it@cahcet.edu.in</span>
-                </a>
-                <a href="mailto:hashimba.ece@cahcet.edu.in" className="flex items-center bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-900 transition-colors">
-                  <span className="mr-3"><Mail size={16} size={24} /></span>
-                  <span className="text-sm font-semibold">hashimba.ece@cahcet.edu.in</span>
+                  <span className="text-sm font-semibold">miic@cahcet.edu.in</span>
                 </a>
               </div>
               <div className="flex items-center justify-center md:justify-start bg-blue-900 text-white px-6 py-3 rounded-xl shadow-lg">
