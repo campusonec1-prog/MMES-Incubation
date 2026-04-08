@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import img1 from '../Images/1.png';
 import img2 from '../Images/2.png';
 import img3 from '../Images/3.png';
+import aahlMain from '../Images/Labs/AAHL facility.jpeg';
+import { Link } from 'react-router-dom';
 import {
   Rocket,
   GraduationCap,
@@ -259,19 +261,38 @@ export default function Home() {
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
             MIIC provides state-of-the-art infrastructure for startups and innovators at CAHCET, Melvisharam.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { icon: <Building size={32} />, text: 'Office space at nominal rent' },
-              { icon: <Laptop size={32} />, text: 'High-performance computing systems with GPU support' },
-              { icon: <Plug size={32} />, text: 'IoT development kits and embedded systems platforms' },
-              { icon: <Microscope size={32} />, text: 'Access to Aquatic Animal Health Laboratory (NABL-accredited laboratory) for biological and environmental testing' },
-              { icon: <FlaskConical size={32} />, text: 'Laboratory access based on project requirements' },
-            ].map(f => (
-              <motion.div key={f.text} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <span className="text-2xl shrink-0">{f.icon}</span>
-                <p className="text-gray-700 font-medium text-sm leading-relaxed">{f.text}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { icon: <Building size={32} />, text: 'Office space at nominal rent' },
+                { icon: <Laptop size={32} />, text: 'High-performance computing systems with GPU support' },
+                { icon: <Plug size={32} />, text: 'IoT development kits and embedded systems platforms' },
+                { icon: <Microscope size={32} />, text: 'Access to Aquatic Animal Health Laboratory (NABL-accredited) for testing' },
+                { icon: <FlaskConical size={32} />, text: 'Laboratory access based on project requirements' },
+              ].map(f => (
+                <motion.div key={f.text} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <span className="text-2xl shrink-0 text-blue-900">{f.icon}</span>
+                  <p className="text-gray-700 font-medium text-sm leading-relaxed">{f.text}</p>
+                </motion.div>
+              ))}
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-2xl h-full min-h-[300px]"
+            >
+              <img src={aahlMain} alt="AAHL Facility" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <h4 className="font-black text-xl mb-2">Explore Labs</h4>
+                <p className="text-blue-100 text-sm mb-4">View our NABL accredited facilities and research centers.</p>
+                <Link to="/facilities" className="inline-block bg-white text-blue-900 font-black px-6 py-2 rounded-full text-sm hover:bg-blue-50 transition-colors">
+                  View All Facilities →
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>

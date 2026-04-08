@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Incubation from './Pages/Incubation';
+import Facilities from './Pages/Facilities';
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
         <Route path="/incubation" element={
           <MainLayout>
             <Incubation />
+          </MainLayout>
+        } />
+        <Route path="/facilities" element={
+          <MainLayout>
+            <Facilities />
           </MainLayout>
         } />
       </Routes>
