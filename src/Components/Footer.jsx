@@ -44,24 +44,6 @@ const addresses = [
     phones: ['+91 98765 43210'],
     address: 'C. Abdul Hakeem College of Engineering and Technology, Melvisharam, Ranipet District – 632 509, Tamil Nadu, India',
   },
-  {
-    city: 'Chennai',
-    email: 'miic.chennai@cahcet.edu.in',
-    phones: ['+91 91760 72920'],
-    address: 'Startup Hub, Anna Nagar, Chennai – 600 040',
-  },
-  {
-    city: 'Bengaluru',
-    email: 'miic.blr@cahcet.edu.in',
-    phones: ['+91 88929 29860'],
-    address: 'StartUp Hub of India, Bengaluru',
-  },
-  {
-    city: 'Ranipet',
-    email: 'miic.ranipet@cahcet.edu.in',
-    phones: ['+91 99446 31425'],
-    address: 'MIIC Satellite Office, Ranipet Industrial Area, Tamil Nadu',
-  },
 ];
 
 /* ─── FOOTER ─────────────────────────────────────────────── */
@@ -163,11 +145,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 shrink-0 opacity-60">✉</span>
-                <a href="mailto:muzaffar.it@cahcet.edu.in" className="hover:text-white transition-colors break-all">muzaffar.it@cahcet.edu.in</a>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5 shrink-0 opacity-60">✉</span>
-                <a href="mailto:hashimba.ece@cahcet.edu.in" className="hover:text-white transition-colors break-all">hashimba.ece@cahcet.edu.in</a>
+                <a href="mailto:miic@cahcet.edu.in" className="hover:text-white transition-colors break-all">miic@cahcet.edu.in</a>
               </li>
               <li className="flex items-center gap-2">
                 <span className="opacity-60 shrink-0">📞</span>
@@ -182,8 +160,7 @@ export default function Footer() {
 
           {/* Chennai — Launching Soon */}
           {[
-            { city: 'Chennai', desc: 'Startup Hub, Anna Nagar' },
-            { city: 'Bengaluru', desc: 'StartUp Hub of India' },
+            { city: 'Chennai', desc: 'Startup Hub' },
           ].map(loc => (
             <div key={loc.city} className="flex flex-col">
               <h4 className="font-black text-white mb-4 text-sm">{loc.city}</h4>

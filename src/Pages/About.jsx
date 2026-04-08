@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 const milestones = [
   { year: '2024', title: 'MIIC Established', desc: 'The MMES Incubation and Innovation Council was formally constituted at C. Abdul Hakeem College of Engineering and Technology, Melvisharam.' },
   { year: '2024', title: 'Infrastructure Setup', desc: 'State-of-the-art incubation space, GPU lab, IoT platforms, and NABL-accredited labs were provisioned for resident startups.' },
-  { year: '2025', title: 'First Cohort Open', desc: 'MIIC opened applications for its first cohort of startups across four thrust areas — Life Sciences, Industry 4.0, Mobility, and Aerospace.' },
-  { year: '2025', title: 'Expanding Reach', desc: 'Plans underway to establish satellite hubs in Chennai and Bengaluru to widen the startup support network.' },
+  { year: '2025', title: 'Expanding Reach', desc: 'Plans underway to establish satellite hubs in Chennai to widen the startup support network.' },
 ];
 
 const team = [
   { name: 'Dr Mohammed Muzaffar Hussain', role: 'MIIC Coordinator', dept: 'Dept. of Information Technology', email: 'muzaffar.it@cahcet.edu.in' },
-  { name: 'Mr. Hashim B A', role: 'MIIC Co-Coordinator', dept: 'Dept. of Electronics & Communication Engineering', email: 'hashimba.ece@cahcet.edu.in' },
+  { name: 'Mr. Hashim B A', role: 'R&D Head', dept: 'Dept. of Electronics & Communication Engineering', email: 'hashimba.ece@cahcet.edu.in' },
+  { name: 'Dr. R.Z. Inamul Hussain', role: 'Innovation Coordinator', dept: 'Associate Professor/CSE', email: '' },
+  { name: 'Dr. Y.J. Nazeer Ahmed', role: 'Startup Coordinator', dept: 'Associate Professor/ECE', email: '' },
 ];
 
 const values = [
@@ -57,7 +58,7 @@ export default function About() {
               We provide the infrastructure, mentoring, funding guidance, and industry connections necessary to transform nascent ideas into scalable, market-ready products and businesses.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our focus areas span <strong>Artificial Intelligence & IoT</strong>, <strong>Life Sciences & Bio-Innovation</strong>, <strong>Sustainable Infrastructure</strong>, and <strong>Clean Mobility</strong> — technologies that will define the next decade.
+              Our focus areas span <strong>Artificial Intelligence & IoT</strong>, <strong>Life Sciences & Bio-Innovation</strong>, <strong>Sustainable Infrastructure</strong> technologies that will define the next decade.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-5">
@@ -151,7 +152,7 @@ export default function About() {
                 <h4 className="font-black text-gray-900 text-lg mb-1">{t.name}</h4>
                 <p className="text-blue-700 font-bold text-sm mb-1">{t.role}</p>
                 <p className="text-gray-400 text-xs mb-4">{t.dept}</p>
-                <a href={`mailto:${t.email}`} className="text-blue-600 text-xs hover:underline break-all">{t.email}</a>
+                {t.email && <a href={`mailto:${t.email}`} className="text-blue-600 text-xs hover:underline break-all">{t.email}</a>}
               </div>
             ))}
           </div>
