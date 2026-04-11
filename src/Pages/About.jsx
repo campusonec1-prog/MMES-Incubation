@@ -8,8 +8,8 @@ const milestones = [
 ];
 
 const team = [
-  { name: 'Dr Mohammed Muzaffar Hussain', role: 'MIIC Coordinator', dept: 'Dept. of Information Technology', email: 'muzaffar.it@cahcet.edu.in' },
-  { name: 'Mr. Hashim B A', role: 'R&D Head', dept: 'Dept. of Electronics & Communication Engineering', email: 'hashimba.ece@cahcet.edu.in' },
+  { name: 'Dr Mohammed Muzaffar Hussain', role: 'Dean (Acadmic and Administration)', dept: 'Dept. of Information Technology', email: 'muzaffar.it@cahcet.edu.in' },
+  { name: 'Mr. Hashim B A', role: 'Dean (Research and Innovation)', dept: 'Dept. of Electronics & Communication Engineering', email: 'hashimba.ece@cahcet.edu.in' },
   { name: 'Dr. R.Z. Inamul Hussain', role: 'Innovation Coordinator', dept: 'Associate Professor/CSE', email: '' },
   { name: 'Dr. Y.J. Nazeer Ahmed', role: 'Startup Coordinator', dept: 'Associate Professor/ECE', email: '' },
 ];
